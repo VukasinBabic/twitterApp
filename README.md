@@ -22,7 +22,7 @@ php bin/console doctrine:database:create
 php bin/console make:migration
 php bin/console doctrine:migrations:migrate
 ```
-After that import Database Records, from DB table,
+After that import Database Records, from twitter-test.sql file
 You can skip this part, but You need to manually set admin user in the Db:
 ```
 ROLES: "ROLE_ADMIN"
