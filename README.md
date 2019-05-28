@@ -13,7 +13,7 @@ composer update
 EDIT ENV file, here is the ENV example, change DB name, user, password etc for your environment. 
 
 ENV example:
-DATABASE_URL=mysql://root:''@127.0.0.1:3306/twitter-test1
+DATABASE_URL=mysql://root:''@127.0.0.1:3306/twitter-test
 ###< doctrine/doctrine-bundle ###
 
 when you create ENV file, run:
