@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block title %}Twitter App
+{% endblock %}
+{% block body %}
+    {% if tweets %}
+    {% for tweet in tweets %}
+        <div class="card mb-3">
+            <div class="card-body bg-light">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-6 text-center">
+                                {{ tweet.comments|length }}
+                                <br>
+                                <small>comments</small>
+                            </div>
+                            <div class="col-6 text-center">
+                                {{ tweet.views }}
+                                <br>
+                                <small>views</small>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-10">
+                        <h5 class="card-title">
+                            <a href="{{ path('app_tweet', { 'id': tweet.id }) }}">{{ tweet.tweet }}</a>
+                        </h5>
+                        <p class="card-text text-muted small">asked by
+                            <a href="{{ path('app_user_tweets', { 'id': tweet.user.id }) }}">{{ tweet.user.email }}
+                            </a>
+                            {{ tweet.created|date("m/d/Y h:i a") }}</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    {% else %}
+        <div class="text-center alert alert-primary">No tweets tweeted!</div>
+    {% endfor %}
+    {% endif %}
+    <div class="navigation">
+        {{ knp_pagination_render(tweets) }}
+    </div>
+{% endblock %}
