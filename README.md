@@ -19,6 +19,9 @@ DATABASE_URL=mysql://root:''@127.0.0.1:3306/twitter-test
 when you create ENV file, run:
 ```
 php bin/console doctrine:database:create
+```
+If you are importing database, you dont need to migrate.
+```
 php bin/console make:migration
 php bin/console doctrine:migrations:migrate
 ```
